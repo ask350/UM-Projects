@@ -36,8 +36,8 @@ ecg = st.sidebar.selectbox("Resting ECG Results", [0,1,2], format_func=lambda x:
 max_hr = st.sidebar.slider("Maximum Heart Rate", 60, 220, 150)
 ex_angina = st.sidebar.selectbox("Exercise Induced Angina", (0,1), format_func=lambda x: "No" if x==0 else "Yes")
 oldpeak = st.sidebar.number_input("Oldpeak (ST depression)", 0.0, 6.0, 1.0, step=0.1)
-slope = st.sidebar.selectbox("ST Slope", [1,2,3], format_func=lambda x: ["Upward","Flat","Downward"][x])
-
+slope_labels = {1: "Upward", 2: "Flat", 3: "Downward"}
+slope = st.sidebar.selectbox("ST Slope", [1,2,3], format_func=lambda x: slope_labels[x])
 
 # Create Input DataFrame
 
