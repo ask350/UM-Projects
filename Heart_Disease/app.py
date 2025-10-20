@@ -16,7 +16,7 @@ with open("feature_columns.json", "r") as f:
 # App Title
 # =========================
 st.set_page_config(page_title="Heart Disease Predictor", layout="centered")
-st.title("💓 Heart Disease Prediction App")
+st.title("Heart Disease Prediction App")
 st.markdown("Predict likelihood of heart disease using clinical parameters.")
 
 # =========================
@@ -71,9 +71,9 @@ if st.button("🔍 Predict Heart Disease Risk"):
     pred = model.predict(df_input)[0]
     prob = model.predict_proba(df_input)[0][1]
     if pred == 1:
-        st.error(f"⚠️ High likelihood of Heart Disease (Probability={prob:.2f})")
+        st.error(f"High likelihood of Heart Disease (Probability={prob:.2f})")
     else:
-        st.success(f"✅ Likely Normal Heart (Probability={1-prob:.2f})")
+        st.success(f"Likely Normal Heart (Probability={1-prob:.2f})")
 
 # =========================
 # Footer
